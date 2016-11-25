@@ -13,8 +13,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
     var score:Int = 0
     
-    func didScore() {
-        score++
+    // declare parameter var name and data type with method
+    // assign default value to allowing method to be called with no parameter input
+    func didScore(points:Int = 1) {
+        score += points
         label.text = "Score: \(score)"
     }
     
@@ -22,9 +24,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.didScore()
-        self.didScore()
-        self.didScore()
-        self.didScore()
+        self.didScore(2)
+        // the 'self.' is implied if you just call the method
+        // ie two lines above are same as two lines below
+        didScore(2)
+        didScore(2)
     }
 
     override func didReceiveMemoryWarning() {
